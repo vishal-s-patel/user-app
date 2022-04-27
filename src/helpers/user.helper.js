@@ -36,7 +36,7 @@ exports.getUserDetails = async (email) => {
     if (today > upcomingBday) {
         upcomingBday.setFullYear(today.getFullYear() + 1);
     }
-    var one_day = 24 * 60 * 60 * 1000;
+    const one_day = 24 * 60 * 60 * 1000;
     let daysLeft = Math.ceil((upcomingBday.getTime() - today.getTime()) / (one_day));
     if (daysLeft <= 7) {
         return { ...user, birthdate: `${daysLeft} days to go` };
